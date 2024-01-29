@@ -27,21 +27,25 @@ def main():
         [ 0, sin(rx),  cos(rx), 0],
         [ 0,       0,        0, 1]
     ]
+    print_matrix(rx_matrix, "RX Matrix: ")
     ry_matrix = [
         [ cos(ry), 0, sin(ry), 0],
         [       0, 1,       0, 0],
         [-sin(ry), 0, cos(ry), 0],
         [       0, 0,       0, 1]
     ]
+    print_matrix(ry_matrix, "RY Matrix: ")
     rz_matrix = [
         [cos(rz), -sin(rz), 0, 0],
         [sin(rz),  cos(rz), 0, 0],
         [      0,        0, 1, 0],
         [      0,        0, 0, 1]
     ]
+    print_matrix(rz_matrix, "RZ Matrix: ")
 
     rot_matrix = multiply_matrix(rx_matrix, ry_matrix)
     rot_matrix = multiply_matrix(rot_matrix, rz_matrix)
+    print_matrix(rot_matrix, "Rot Matrix: ")
 
     res = multiply_matrix(translate_matrix, rot_matrix)
     print_matrix(res, "Your final matrix is: ")
