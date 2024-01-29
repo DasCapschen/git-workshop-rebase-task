@@ -40,14 +40,31 @@ def main():
         [      0,        0, 0, 1]
     ]
 
- 
+    rot_matrix = multiply_matrix(rx_matrix, ry_matrix)
+    rot_matrix = multiply_matrix(rot_matrix, rz_matrix)
+
+    res = multiply_matrix(translate_matrix, rot_matrix)
 
     print("Your final Transformation Matrix is: ")
     for i in range(4):
         print("[", end="")
         for j in range(4):
-            print(f"{translate_matrix[i][j]:9.2f}", end="")
+            print(f"{res[i][j]:9.2f}", end="")
         print("]")
+
+
+def multiply_matrix(a, b):
+    c = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+    ]
+    for i in range(4):
+        for j in range(4):
+            for k in range(4):
+                c[i][j] += (a[i][k] * b[k][i])
+    return c
 
 
 if __name__ == "__main__":
