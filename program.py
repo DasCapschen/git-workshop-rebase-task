@@ -5,10 +5,16 @@ def main():
     ty = float(ty.strip())
     tz = float(tz.strip())
 
-    translate_matrix = [
-        [1, 0, 0, tx],
-        [0, 1, 0, ty],
-        [0, 0, 1, tz],
+    scale_str = input("Enter scaling in form X,Y,Z: ")
+    sx, sy, sz = scale_str.split(',')
+    sx = float(sx.strip())
+    sy = float(sy.strip())
+    sz = float(sz.strip())
+
+    st_matrix = [
+        [sx, 0, 0, tx],
+        [0, sy, 0, ty],
+        [0, 0, sz, tz],
         [0, 0, 0,  1]
     ]
 
@@ -16,7 +22,7 @@ def main():
     for i in range(4):
         print("[", end="")
         for j in range(4):
-            print(f"{translate_matrix[i][j]:9.2f}", end="")
+            print(f"{st_matrix[i][j]:9.2f}", end="")
         print("]")
 
 
