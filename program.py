@@ -70,7 +70,7 @@ def multiply_matrix(a, b):
     for i in range(4):
         for j in range(4):
             for k in range(4):
-                c[i][j] += (a[i][k] * b[k][i])
+                c[i][j] += (a[i][k] * b[k][j])
     return c
 
 
