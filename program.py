@@ -1,3 +1,6 @@
+from math import sin, cos
+
+
 def main():
     translate_str = input("Enter Translation in form X,Y,Z: ")
     tx, ty, tz = translate_str.split(",")
@@ -17,6 +20,13 @@ def main():
     rx = float(rx.strip()) * (3.1415926 / 180.0)
     ry = float(ry.strip()) * (3.1415926 / 180.0)
     rz = float(rz.strip()) * (3.1415926 / 180.0)
+
+    rx_matrix = [
+        [ 1,       0,        0, 0],
+        [ 0, cos(rx), -sin(rx), 0],
+        [ 0, sin(rx),  cos(rx), 0],
+        [ 0,       0,        0, 1]
+    ]
 
     print("Your final Transformation Matrix is: ")
     for i in range(4):
