@@ -27,6 +27,13 @@ def main():
         [ 0, sin(rx),  cos(rx), 0],
         [ 0,       0,        0, 1]
     ]
+    ry_matrix = [
+        [ cos(ry), 0, sin(ry), 0],
+        [       0, 1,       0, 0],
+        [-sin(ry), 0, cos(ry), 0],
+        [       0, 0,       0, 1]
+    ]
+
 
     print("Your final Transformation Matrix is: ")
     for i in range(4):
