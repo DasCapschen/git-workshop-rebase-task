@@ -12,6 +12,12 @@ def main():
         [0, 0, 0,  1]
     ]
 
+    rotate_str = input("Enter Rotation as Euler Angles in Form X,Y,Z: ")
+    rx, ry, rz = rotate_str.split(',')
+    rx = float(rx.strip()) * (3.1415926 / 180.0)
+    ry = float(ry.strip()) * (3.1415926 / 180.0)
+    rz = float(rz.strip()) * (3.1415926 / 180.0)
+
     print("Your final Transformation Matrix is: ")
     for i in range(4):
         print("[", end="")
