@@ -44,12 +44,15 @@ def main():
     rot_matrix = multiply_matrix(rot_matrix, rz_matrix)
 
     res = multiply_matrix(translate_matrix, rot_matrix)
+    print_matrix(res, "Your final matrix is: ")
 
-    print("Your final Transformation Matrix is: ")
+
+def print_matrix(A, log):
+    print(log)
     for i in range(4):
         print("[", end="")
         for j in range(4):
-            print(f"{res[i][j]:9.2f}", end="")
+            print(f"{A[i][j]:9.2f}", end="")
         print("]")
 
 
